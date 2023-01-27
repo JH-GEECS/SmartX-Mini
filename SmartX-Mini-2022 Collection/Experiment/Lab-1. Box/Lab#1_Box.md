@@ -106,17 +106,17 @@ Installed on NUC
 
 0. chnage apt repository link for fast update & upgrade
 
-  ```bash
-  sudo vi /etc/apt/sources.list
-  ```
-  type below command and enter
-  ```text
-  :%s/kr.archive.ubuntu.com/mirror.kakao.com/
-  ```
-  type below command and enter to exit the text editor
-  ```text
-  :wq
-  ```
+    ```bash
+    sudo vi /etc/apt/sources.list
+    ```
+    type below command and enter
+    ```text
+    :%s/kr.archive.ubuntu.com/mirror.kakao.com/
+    ```
+    type below command and enter to exit the text editor
+    ```text
+    :wq
+    ```
 1. Update & Upgrade
 
    ```bash
@@ -125,9 +125,9 @@ Installed on NUC
    ```
 2. upgrade vim text editor
 
-  ```bash
-  sudo apt install vim
-  ```
+    ```bash
+    sudo apt install vim
+    ```
 
 3. Install net-tools & ifupdown
 
@@ -165,8 +165,10 @@ Installed on NUC
   sudo vi /etc/systemd/resolved.conf
   ```
 
-  DNS 왼편에 있는 주석표시 /# 을 제거해주고  
+  DNS 왼편에 있는 주석표시 /# 을 제거해주고
+  delete /# next to DNS.   
   DNS 주소를 명시해주세요
+  type the DNS addresses  as below.
 
   > …
   >
@@ -190,7 +192,7 @@ Installed on NUC
   type your nuc's ip in '<your nuc ip>'and nuc's gateway ip in '<gateway ip>'
   
   caution!
-  If your NUC has two ethernet ports, there is no port named `eno1`. Check which port(`enp88s0` or `enp89s0`) is connected to ethernet by `ifconfig` command. and change all 'eno1' in the below text to 'enp88s0' or 'enp89s0'.   
+  If your NUC has two ethernet ports, there is no port named `eno1`. Check which port(`enp88s0` or `enp89s0`) is connected to ethernet by `ifconfig` command. and change all 'eno1' in the below text to `enp88s0` or `enp89s0`.   
 
   ```text
   auto lo
@@ -263,7 +265,7 @@ exit # Exit superuser mod
   # upgrade KVM
   # qemu is open-source emulator
 
-  wget https://ftp.lanet.kr/ubuntu-releases/20.04.4/ubuntu-20.04.4-live-server-amd64.iso
+  wget https://ftp.lanet.kr/ubuntu-releases/20.04.5/ubuntu-20.04.5-live-server-amd64.iso
   ```
   
 
@@ -280,7 +282,7 @@ exit # Exit superuser mod
   Boot VM image from Ubuntu iso file (띄어쓰기 주의!)
 
   ```bash
-  sudo kvm -m 1024 -name tt -smp cpus=2,maxcpus=2 -device virtio-net-pci,netdev=net0 -netdev tap,id=net0,ifname=vport_vFunction,script=no -boot d vFunction20.img -cdrom ubuntu-20.04.4-live-server-amd64.iso -vnc :5 -daemonize -monitor telnet:127.0.0.1:3010,server,nowait,ipv4
+  sudo kvm -m 1024 -name tt -smp cpus=2,maxcpus=2 -device virtio-net-pci,netdev=net0 -netdev tap,id=net0,ifname=vport_vFunction,script=no -boot d vFunction20.img -cdrom ubuntu-20.04.5-live-server-amd64.iso -vnc :5 -daemonize -monitor telnet:127.0.0.1:3010,server,nowait,ipv4 -cpu host
   ```
 
 
