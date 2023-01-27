@@ -104,23 +104,41 @@ Installed on NUC
 
 - Set Prerequisites
 
-  0. Update & Upgrade
+0. chnage apt repository link for fast update & upgrade
 
-     ```bash
-     sudo apt update
-     sudo apt upgrade
-     ```
+  ```bash
+  sudo vi /etc/apt/sources.list
+  ```
+  type below command and enter
+  ```text
+  :%s/kr.archive.ubuntu.com/mirror.kakao.com/
+  ```
+  type below command and enter to exit the text editor
+  ```text
+  :wq
+  ```
+1. Update & Upgrade
 
-  1. Install net-tools & ifupdown
+   ```bash
+   sudo apt update
+   sudo apt upgrade
+   ```
+2. upgrade vim text editor
 
-     ```bash
-     sudo apt install net-tools ifupdown
-     ifconfig -a
-     ```
+  ```bash
+  sudo apt install vim
+  ```
 
-     ![Network Configuration](./img/ifconfig.png)
+3. Install net-tools & ifupdown
 
-2. Install openvswitch-switch & make br0 bridge
+   ```bash
+   sudo apt install net-tools ifupdown
+   ifconfig -a
+   ```
+
+   ![Network Configuration](./img/ifconfig.png)
+
+4. Install openvswitch-switch & make br0 bridge
 
    ```bash
    sudo apt install openvswitch-switch
@@ -166,10 +184,13 @@ Installed on NUC
 
   Configure the network interface `vport_vFunction` is a tap interface and attach it to your VM.
 
-  !!!들여쓰기는 Tab 한번입니다!!!  
+  !!!들여쓰기는 Tab 한번입니다!!!
+  caution! one tab for indentation
   `<your nuc ip>`에 현재 nuc의 ip와 `<gateway ip>`에 gateway ip를 입력해주세요.
-
-  If your NUC has tow ethernet ports, there is no port named `eno1`. Check which port(`enp88s0` ro `enp89s0`) is connected to ethernet by `ifconfig` command.
+  type your nuc's ip in '<your nuc ip>'and nuc's gateway ip in '<gateway ip>'
+  
+  caution!
+  If your NUC has two ethernet ports, there is no port named `eno1`. Check which port(`enp88s0` or `enp89s0`) is connected to ethernet by `ifconfig` command. and change all 'eno1' in the below text to 'enp88s0' or 'enp89s0'.   
 
   ```text
   auto lo
