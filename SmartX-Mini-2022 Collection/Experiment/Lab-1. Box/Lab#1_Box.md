@@ -14,7 +14,7 @@ In the Box Lab, we will install OS directly on a *bare metal and build a virtual
 ![Objective](./img/objective.png)
 
 세부적인 구조를 보면 다음과 같습니다.
-let's take a close look at the overall structure.
+<br>let's take a close look at the overall structure.
 
 ## 1. Theory
 
@@ -153,7 +153,9 @@ Installed on NUC(i.e., bare metal)
    ![Network Configuration](./img/ifconfig.png)
 
    **caution!** After you enter  ```ifconfig -a```.<br>
-  If there exist enp88s0 and enp89s0, **please reboot your NUC.**  
+  If there exist enp88s0 and enp89s0, **please reboot your NUC.**
+  ![two NIC](./img/two_NIC.png)
+    
 
 
 
