@@ -24,7 +24,7 @@ In the Box Lab, we will install OS directly on a *bare metal and build a virtual
 
   하나의 피지컬 머신을 여러개의 가상 머신으로 나눌 것입니다. 각각의 가상 머신은 모두 독립적이며 개별적인 자원을 할당받습니다. 또한, 피지컬 머신의 OS와 다른 OS를 사용자 마음대로 정할 수 있습니다. 가상 머신은 피지컬 머신과 비교할 때 차이가 거의 없지만, 그만큼 Container보다 무겁고 생성하는데 오래걸립니다.<br>
   We will divide a physical machine into several virtual machines. Each of the virtual machines is independent and allocated individual computation resources. Also, Each virtual machine can
-  have a different OS from the host OS. There is almost no difference between **a virtual machine** and a physical machine. However, It takes more time to build a virtual machine than a container and requires more computation resources to operate a virtual machine.  
+  have a different OS from the host OS. There is almost no difference between **a virtual machine** and **a physical machine**. However, It takes more time to build a virtual machine than a container and requires more computation resources to operate a virtual machine.  
 
   저희는 가상 머신을 생성하기 위해 리눅스에 기본적으로 탑재되어있는 KVM Hypervisor를 사용할 것입니다.<br>
   To build a virtual machine, we will use the KVM hypervisor.
@@ -68,6 +68,7 @@ Installed on NUC(i.e., bare metal)
 #### 2-1-1. Updates and other software
 
 - Select ‘Minimal installation’
+- If you can't click buttons, move the window after type 'alt+f7'
 
 #### 2-1-2. Installation type
 
